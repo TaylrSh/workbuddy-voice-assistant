@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Runtime data and personal settings
+recordings/
+*.log
+run_out.txt
+voice-assistant-config.json
+overlay-position.json
+backups/
+
+# Local-only diagnostic with a machine-specific historical fixture
+tools/final_check.py
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
