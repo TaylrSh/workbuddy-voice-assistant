@@ -16,7 +16,7 @@
 - **语音播报**：优先使用 `edge-tts`，不可用时回退到 Windows SAPI。
 - **文字指令**：也可以直接在面板输入文字并发送。
 - **可拖动位置**：悬浮球位置自动保存，并限制在可见屏幕范围内。
-- **品牌界面**：使用 WorkBuddy 青绿渐变图标，支持浅色、深色和缩放。
+- **自有视觉**：青绿渐变语音气泡、麦克风与 AI 星点图标，与官方商标明确区分；支持浅色、深色和缩放。
 
 ## 运行环境
 
@@ -26,6 +26,24 @@
 - 可用的麦克风；语音播报需要系统音频输出
 
 无需自行配置大模型 API Key，但需要 WorkBuddy 账号及其语音转写能力可用。
+
+## 作为 WorkBuddy 插件安装
+
+本仓库同时是一个自定义插件市场，可在支持 `/plugin` 的 WorkBuddy 环境中添加：
+
+```text
+/plugin marketplace add TaylrSh/workbuddy-voice-assistant
+/plugin install workbuddy-voice-assistant@taylrsh-tools
+/reload-plugins
+```
+
+随后可让 WorkBuddy“安装并启动语音助手”“查看语音助手状态”或“停止语音助手”。插件会把程序复制到 `%LOCALAPPDATA%\WorkBuddyVoiceAssistant`，使用独立虚拟环境，不会自动创建开机启动项。
+
+也可以在插件管理页添加市场地址：
+
+```text
+https://github.com/TaylrSh/workbuddy-voice-assistant
+```
 
 ## 快速开始
 
@@ -159,6 +177,10 @@ py tools/chain_offline_test.py
 
 ```text
 voice-assistant/
+├── .codebuddy-plugin/
+│   └── marketplace.json     # 自定义插件市场清单
+├── plugin.json              # WorkBuddy 插件清单
+├── skills/workbuddy-voice/  # 插件技能与安装/启动/停止脚本
 ├── voice_assistant.py       # 主流程与命令行入口
 ├── wb_overlay.py            # Win32 悬浮窗、渲染和交互
 ├── wb_hotkey.py             # 全局热键及组合键解析
@@ -167,8 +189,8 @@ voice-assistant/
 ├── wb_mic.py                # 麦克风录音与音量检测
 ├── wb_session.py            # WorkBuddy 会话记录监听
 ├── wb_tts.py                # 语音合成与播放
-├── assets/                  # 品牌图标与 README 预览图
-├── tools/                   # 交互、热键和离线测试
+├── assets/                  # 自绘图标与 README 预览图
+├── tools/                   # 图标生成、交互和离线测试
 ├── verify.py                # 一键自检
 ├── requirements.txt
 └── 启动语音助手.bat

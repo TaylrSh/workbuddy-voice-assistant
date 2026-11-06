@@ -1,0 +1,13 @@
+{
+  "name": "workbuddy-voice-assistant",
+  "version": "1.0.0",
+  "description": "Windows floating push-to-talk voice assistant with customizable global hotkeys.",
+  "author": {
+    "name": "TaylrSh"
+  },
+  "homepage": "https://github.com/TaylrSh/workbuddy-voice-assistant",
+  "repository": "https://github.com/TaylrSh/workbuddy-voice-assistant",
+  "license": "MIT",
+  "keywords": ["voice", "speech", "microphone", "hotkey", "windows"],
+  "skills": ["./skills/workbuddy-voice"]
+}

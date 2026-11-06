@@ -127,9 +127,9 @@ _font_cache: dict[tuple[int, bool], ImageFont.FreeTypeFont] = {}
 
 
 @lru_cache(maxsize=16)
-def load_workbuddy_icon(size: int) -> Image.Image:
-    """加载官方 WorkBuddy 图标，裁掉透明边距后缩放到目标尺寸。"""
-    path = Path(__file__).resolve().parent / "assets" / "workbuddy-icon.png"
+def load_app_icon(size: int) -> Image.Image:
+    """加载本项目自绘图标，裁掉透明边距后缩放到目标尺寸。"""
+    path = Path(__file__).resolve().parent / "assets" / "app-icon.png"
     img = Image.open(path).convert("RGBA")
     bbox = img.getchannel("A").getbbox()
     if bbox:
@@ -609,7 +609,7 @@ class Renderer:
             top, bottom = theme.bubble_top, theme.bubble_bottom
 
         # 使用官方 WorkBuddy 品牌图标，状态光圈和动画保持不变。
-        img.alpha_composite(load_workbuddy_icon(2 * r), (cx - r, cy - r))
+        img.alpha_composite(load_app_icon(2 * r), (cx - r, cy - r))
 
         if state == STATE_THINKING:
             # 思考中：转圈的小圆点
@@ -664,7 +664,7 @@ class Renderer:
 
         # ---- 标题栏 ----
         icon = int(32 * s)
-        card.alpha_composite(load_workbuddy_icon(icon), (pad, y))
+        card.alpha_composite(load_app_icon(icon), (pad, y))
 
         title_font = load_font(int(15 * s), bold=True)
         draw.text((pad + icon + int(10 * s), y), "WorkBuddy 语音助手",

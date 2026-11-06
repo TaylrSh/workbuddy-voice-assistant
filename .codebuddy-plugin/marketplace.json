@@ -1,0 +1,25 @@
+{
+  "name": "taylrsh-tools",
+  "owner": {
+    "name": "TaylrSh"
+  },
+  "description": "Community plugins by TaylrSh.",
+  "version": "1.0.0",
+  "plugins": [
+    {
+      "name": "workbuddy-voice-assistant",
+      "source": ".",
+      "description": "Windows floating push-to-talk voice assistant with customizable global hotkeys.",
+      "version": "1.0.0",
+      "author": {
+        "name": "TaylrSh"
+      },
+      "homepage": "https://github.com/TaylrSh/workbuddy-voice-assistant",
+      "repository": "https://github.com/TaylrSh/workbuddy-voice-assistant",
+      "license": "MIT",
+      "keywords": ["voice", "speech", "microphone", "hotkey", "windows"],
+      "category": "productivity",
+      "strict": true
+    }
+  ]
+}
