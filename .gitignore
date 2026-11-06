@@ -14,6 +14,7 @@ backups/
 
 # Local-only diagnostic with a machine-specific historical fixture
 tools/final_check.py
+dist/
 
 # OS and editor files
 .DS_Store

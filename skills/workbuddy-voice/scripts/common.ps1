@@ -1,6 +1,12 @@
 $ErrorActionPreference = "Stop"
 
-$script:PluginRoot = (Resolve-Path (Join-Path $PSScriptRoot "..\..\..")).Path
+$bundledApp = Join-Path $PSScriptRoot "..\templates"
+if (Test-Path -LiteralPath (Join-Path $bundledApp "voice_assistant.py")) {
+    $script:PluginRoot = (Resolve-Path $bundledApp).Path
+}
+else {
+    $script:PluginRoot = (Resolve-Path (Join-Path $PSScriptRoot "..\..\..")).Path
+}
 $script:DataRoot = Join-Path $env:LOCALAPPDATA "WorkBuddyVoiceAssistant"
 $script:AppDir = Join-Path $script:DataRoot "app"
 $script:VenvDir = Join-Path $script:DataRoot "venv"

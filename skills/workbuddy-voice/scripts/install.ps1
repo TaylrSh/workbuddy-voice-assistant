@@ -19,11 +19,19 @@ try {
             $copied++
         }
 
+    $assetTarget = Join-Path $script:AppDir "assets"
+    New-Item -ItemType Directory -Force -Path $assetTarget | Out-Null
     $assetSource = Join-Path $script:PluginRoot "assets"
     if (Test-Path $assetSource) {
-        $assetTarget = Join-Path $script:AppDir "assets"
-        New-Item -ItemType Directory -Force -Path $assetTarget | Out-Null
         Copy-Item -Path (Join-Path $assetSource "*") -Destination $assetTarget -Recurse -Force
+    }
+    else {
+        foreach ($name in @("app-icon.png", "preview.png")) {
+            $source = Join-Path $script:PluginRoot $name
+            if (Test-Path $source) {
+                Copy-Item -LiteralPath $source -Destination $assetTarget -Force
+            }
+        }
     }
 
     if (-not (Test-Path $script:VenvPython)) {

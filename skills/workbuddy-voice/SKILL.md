@@ -1,6 +1,18 @@
 ---
 name: workbuddy-voice-assistant
-description: "Install, start, stop, or inspect the Windows floating push-to-talk voice assistant. Use when the user asks to install/启用/启动/停止 WorkBuddy 语音助手，查看它的运行状态，或设置全局语音快捷键。"
+display_name: WorkBuddy 语音助手
+display_name_en: WorkBuddy Voice Assistant
+description: "Install, start, stop, or inspect the Windows floating push-to-talk voice assistant. 当用户要求安装、启用、启动、停止 WorkBuddy 语音助手，查看运行状态，或设置全局语音快捷键时使用。"
+description_zh: 在 Windows 上安装和管理悬浮语音助手，按住快捷键说话，松开后交给 WorkBuddy 处理并朗读回复。
+description_en: Install and manage a Windows floating push-to-talk voice assistant for WorkBuddy with customizable global hotkeys.
+examples_zh:
+  - 安装并启动 WorkBuddy 语音助手
+  - 查看语音助手是否正在运行
+  - 停止语音助手并释放快捷键
+examples_en:
+  - Install and start the WorkBuddy voice assistant
+  - Check whether the voice assistant is running
+  - Stop the voice assistant and release its hotkey
 version: 1.0.0
 author: TaylrSh
 license: MIT
